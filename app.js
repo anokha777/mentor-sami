@@ -38,7 +38,7 @@ const httpServer = createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
 // Listen to HTTP and WebSocket server
-const port = SERVER_PORT;
+const port = process.env.PORT || SERVER_PORT;
 httpServer.listen({ port: port }, () => {
   console.log(`server ready at port ${port}`);
 });
